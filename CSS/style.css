@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: wheat;
+    padding: 15px 0 15px 0;
+    font-family: 'Potta One', cursive;
+
+}
+
+.logo img{
+    width: 33px;
+    border: 2px solid ;
+    border-radius: 15px;
+    margin-right: 8px;
+}
