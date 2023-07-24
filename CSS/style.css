@@ -19,3 +19,11 @@ nav{
     border-radius: 15px;
     margin-right: 8px;
 }
+
+.container{
+    /* background-color: grey; */
+    width: 50vw;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
