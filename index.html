@@ -30,31 +30,39 @@
        <ol>
 
         <!-- 1st Start Block -->
-        <li>Adding MTA .yaml file
-            <pre><code class="language-js">cds add mta</code></pre>
+        <li>Login to Cloud Foundry
+            <ul>
+                <li>Specify API in cloud instance (First time)</li></ul>
+            <pre><code class="language-js">cf login</code></pre>
         </li>
         <!-- 1st End Block -->
 
         <!-- 2st Start Block -->
-        <li>Adding MTA .yaml file
+        <li>Adding MTA mta.yaml file (In terminal)
+            <ul>
+                <li>Creates .yaml file</li>
+            </ul>
             <pre><code class="language-js">cds add mta</code></pre>
         </li>
         <!-- 2st End Block -->
 
         <!-- 3st Start Block -->
-        <li>Adding MTA .yaml file
-            <pre><code class="language-js">cds add mta</code></pre>
+        <li>Adding Node modules
+            <pre><code class="language-js">cds add hana</code></pre>
         </li>
         <!-- 3st End Block -->
 
         <!-- 4st Start Block -->
-        <li>Adding MTA .yaml file
-            <pre><code class="language-js">cds add mta</code></pre>
+        <li>Changing mta.yaml *db-deployer
+            <pre><code class="language-yaml">- name: adb_emp2-db-deployer
+  type: hdb
+  path: db
+</code></pre>
         </li>
         <!-- 4st End Block -->
 
         <!-- 5st Start Block -->
-        <li>Adding MTA .yaml file
+        <li>CHanging package.json
             <pre><code class="language-js">cds add mta</code></pre>
         </li>
         <!-- 5st End Block -->
