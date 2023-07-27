@@ -63,10 +63,106 @@
 
         <!-- 5st Start Block -->
         <li>CHanging package.json
-            <pre><code class="language-js">cds add mta</code></pre>
+            <pre><code class="language-json">
+"cds": {
+    "build": {
+        "tasks": [
+        {
+            "for": "hana",
+            "dest": "../db"
+        },
+        {
+            "for": "node-cf"
+        }
+        ]
+    },
+    "hana": {
+        "deploy-format": "hdbtable"
+    },
+    "requires": {
+        "db": {
+        "kind": "hana"
+        },
+        "auth": {
+        "kind": "dummy-auth"
+        }
+    }
+}
+            </code></pre>
         </li>
         <!-- 5st End Block -->
 
+        <!-- 6st Start Block -->
+        <li>Installing the packages we require for project after updating the package.json file 
+            <pre><code class="language-terminal">npm install</code></pre>
+        </li>
+        <!-- 6st End Block -->
+        
+
+        <!-- 7st Start Block -->
+        <li>Installing hana-cli
+            <pre><code class="language-yaml">npm install -g hana-cli</code></pre>
+        </li>
+        <!-- 7st End Block -->
+
+        <!-- 8st Start Block -->
+        <li>Creating Module of the project for deployment
+            <pre><code class="language-yaml">hana-cli createModule</code></pre>
+        </li>
+        <!-- 8st End Block -->
+
+        <!-- 9st Start Block -->
+        <li>Creating Entity and service model from <b><u>Data Model and service</u></b>  at the bottom right
+            <pre><code class="language-javascript">//example of services.cds
+using adb_emp2 as my from '../db/datamodel';
+
+service catalogservice {
+
+    entity worker1 as projection on my.worker1;
+    entity worker2 as projection on my.worker2;
+    entity a as projection on my.a;
+    entity vbrk as projection on my.vbrk;
+
+} 
+</code></pre>
+        </li>
+        <!-- 9st End Block -->
+
+        <!-- 10th Start Block -->
+        <li>After creation of calculation view we need to create entity of it system will generate for us go to db
+            <pre><code class="language-terminal">cd db</code></pre>
+        </li>
+        <!-- 10th End Block -->
+
+        <!-- 11th Start Block -->
+        <li>Creating default.json using command(Move this file to default directory after using this command)
+            <pre><code class="language-terminal">hana-cli copy2DefaultEnv</code></pre>
+        </li>
+        <!-- 11th End Block -->
+
+        <!-- 12th Start Block -->
+        <li>Now go back to orignal directory
+            <pre><code class="language-yaml">cd ..</code></pre>
+        </li>
+        <!-- 12th End Block -->
+
+        <!-- 13th Start Block -->
+        <li>Build the project
+            <pre><code class="language-yaml">cds build</code></pre>
+        </li>
+        <!-- 13th End Block -->
+
+        <!-- 14th Start Block -->
+        <li>Start the project on local host
+            <pre><code class="language-yaml">npm start</code></pre>
+        </li>
+        <!-- 14th End Block -->
+
+        <!-- 15th Start Block -->
+        <li>Changing mta.yaml *db-deployer
+            <pre><code class="language-yaml"></code></pre>
+        </li>
+        <!-- 15th End Block -->
 
        </ol>
     </div>
